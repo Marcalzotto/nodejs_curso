@@ -10,4 +10,5 @@
 //cuando finalice el codigo que se este ejecutando en ese momento
 //todo el proceso de gestion de los eventos de sistema es asincronico,
 //porque se ejecuta simultaneamente con lo que este ejecutando v8
+//la arquitectura controlada por eventos sin bloqueo ayuda a node a ser muy performante
 //
