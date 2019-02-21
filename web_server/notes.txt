@@ -1,0 +1,40 @@
+tips a tener en cuenta para crear un server con node
+1-buenas formas de organizar mi codigo en piezas reutilizableas
+2-tener formas de manejar archivos
+3-tener formas de manejar base de datos
+4-habilidad de comincarse a traves de internet
+5-habilidad de aceptar peticiones y enviar respuestas en formato estandar
+6-formas de lidiar con trabajos que toman mucho tiempo.
+
+Protocolo: un conjunto de reglas que dos partes acuerdan utilizar al comuncarse,
+el cliente y servidor estan programados para entender esas reglas.
+
+TCP/IP
+IP = protocolo de internet(es un numero que identifica en forma univoca a un equipo)
+Socket = un canal por donde se transmite la informacion entre el cliente
+y el servidor, dicha informacion se encuentra estructurada en otros protocolos
+http,ftp,smtp.
+
+El protocolo TCP se encarga de tomar la informacion que se va transmitir entre el 
+cliente y el servidor y dividirla en paquetes y enviarla.
+
+Puerto
+Es una direccion que indica a que programa se enviaran los paquetes TCP
+que un equipo a ha recibido. Esta es un numero unico.
+Cuando una aplicacion esta levantada y con puerto asiganado se dice que esta
+esta escuchando en dicho puerto.
+
+Direccion de Socket = IP:puerto
+Ej: 78.132.160.4:443
+
+HTTP 
+Es un conjunto de reglas y un formato para los datos que se transfieren en la web
+Significa protocolo de transferencia de hipertexto, es una de los diversos formatos
+que definen los datos que se transfieren a traves de TCP/IP
+
+MIME type: un estandar para definir los tipos de datos que se envian con cualquier
+respuesta HTTP en particular
+la sigla significa extensiones multiproposito de correo de internet.
+Ej: application/json, text/html
+Los tipos de MIME estan diseñados para que el navegador los interprete y sepa
+que hacer con ello.

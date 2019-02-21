@@ -19,8 +19,17 @@
 
 var fs = require('fs');
 
-var readable = fs.createReadStream(__dirname + '/lorem.txt',{encoding : 'utf8'});
+var readable = fs.createReadStream(__dirname + '/lorem.txt',{encoding : 'utf8',
+highWaterMark: 2 * 1024});
+//luego puedo captar parte de la transmision de datos leidos desde el archvo
+//en partes y pasarlos por parametro a un listener
+//highWaterMark me sirve para limitar el tamaño de los fragmentos transmitidos
+//el valor que toma la propiedad es en bytes
 
-readable.on('data',function(chunk){
-    console.log(chunk.length);
+var writable = fs.createWriteStream(__dirname + '/lorem_empty.txt');
+
+readable.on('data',function(file_part){
+    console.log(file_part);
+    console.log("Esto son: " + file_part.length + "bytes");
+    writable.write(file_part);
 });
