@@ -37,4 +37,4 @@ respuesta HTTP en particular
 la sigla significa extensiones multiproposito de correo de internet.
 Ej: application/json, text/html
 Los tipos de MIME estan diseñados para que el navegador los interprete y sepa
-que hacer con ello.
+que hacer con ellos
