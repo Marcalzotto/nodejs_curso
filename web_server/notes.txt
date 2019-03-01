@@ -38,3 +38,7 @@ la sigla significa extensiones multiproposito de correo de internet.
 Ej: application/json, text/html
 Los tipos de MIME estan diseñados para que el navegador los interprete y sepa
 que hacer con ellos
+
+http_parser
+es un programa hecho en c++ integrado dentro del nucleo de Node.
+Toma peticiones y respuestas http, las analiza y realiza operaciones con ellas.
