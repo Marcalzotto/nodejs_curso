@@ -1,0 +1,232 @@
+I see that this server object, which is an event emitter,
+
+meaning that it is faking events,
+
+it has an events object
+
+that has a request property on it,
+
+and when I gave it that function,
+
+it will invoke it when a request occurs,
+
+and it will pass to the function that I give it
+
+two objects, one representing the request,
+
+and one representing the stream
+
+where I can stream the response back.
+
+So, it gives me those two parameters.
+
+Now, I could call them a and b or whatever,
+
+but typically, we call them request and response.
+
+So this represents the request coming,
+
+and this is my way of sending back a response.
+
+So then, inside this function that I've given
+
+that will be executed when a request happens
+
+that is closer to the machine,
+
+the c side of the code sees that a request has happened,
+
+which causes a JavaScript event, a fake event to be emitted,
+
+then this function is run.
+
+And so, I need to build a response.
+
+then this function is run.
+
+And so, I need to build a response.
+
+And remember, an HTTP response starts with
+
+what's in the head.
+
+So I can say writeHead, that's a method for me
+
+to help me build that string ultimately
+
+that represents an HTTP response.
+
+I can say what my status code is,
+
+what's in that first line,
+
+and then, I can specify the headers, those name-value pairs.
+
+An easy way to do that would be to use an object
+
+since an object is name-value pairs.
+
+And that's just what node lets me do.
+
+So I'll say Content-Type, and I'll wrap it in quotes
+
+because even though a JavaScript object doesn't require
+
+that the name of the property be in quotes, it is allowed.
+
+And the other problem is that some of the HTTP names
+
+for the name-value pairs for the headers
+
+are not valid JavaScript variable names.
+
+So, if I did it without quotes, it might give me an error.
+
+But with quotes, JavaScript will let me get away with it.
+
+Then I can give it a value.
+
+I'll give it a MIME type.
+
+Usually, in the early examples
+
+in other node courses and books,
+
+the first thing they'll do is
+
+send some plain text back, not HTML.
+
+And the MIME type for plain text is text slash plain.
+
+And that tells the browser what I'm giving back
+
+is just plain text.
+
+And then I'll send the body.
+
+There's a send method I could use,
+
+but I'll just use the end method,
+
+which means I'm done sending,
+
+and this is the last thing that I'm sending,
+
+and we'll just send something simple,
+
+hello World.
+
+And then, to be good, we'll send in carriage return,
+
+which is this back slash n in JavaScript,
+
+which just means a new line and a good and proper way
+
+to end your data.
+
+hasta 4:35
+
+and giving a callback, which actually is
+
+turned into an event listener
+
+using the event emitter code inside node js,
+
+and that I have an HTTP request and a response,
+
+which has some methods which allows me
+
+to send information back down the stream,
+
+things like the status and the headers
+
+that our information at the browser will use
+
+to interpret what I'm sending
+
+and the body of the data itself that I'm sending,
+
+and that node js will take all this information
+
+and create a properly formatted HTTP response
+
+that the browser can then understand
+
+and is programmed to do things with,
+
+and ultimately, this listen for the port and address
+
+will make sure that that request from the browser
+
+is routed properly to this code ultimately.
+
+All right, so let's run this.
+
+The first thing I need to do, then, is run the programme.
+
+But this is going to work a bit differently
+
+than the programmes you've run before.
+
+I'll say node app dot js,
+
+run this JavaScript file,
+
+and it runs, but notice it's still sitting there waiting.
+
+The programme continues to run
+
+because when I created this server,
+
+that caused some code to run that simply sits there
+
+and waits for a request.
+
+So the node programme doesn't stop.
+
+It doesn't exit out of the programme code.
+
+It just sits there and keeps running,
+
+waiting for a request. ----->8:32
+
+So, we need to give it a request.
+
+The best way to do that is my Internet browser,
+
+which is designed to build HTTP requests
+
+and understand HTTP responses.
+
+So, I'll say localhost
+
+colon to give it a port 1337.
+
+Local host means my local server.
+
+Normally, this would be a domain name
+
+pointing at some server where I push this code.
+
+But, in this case, we'll just be
+
+pointing at my own machine,
+
+so the client and the server will be the same computer.
+
+But the idea here is the same.
+
+Look for a programme that is listening on 1337
+
+and give it the HTTP request
+
+that the browser is going to make right now
+
+when I hit Enter.
+
+And then my node code will be run
+
+because the request event will be emitted.
+
+I have the server listening and gave it that function.
+

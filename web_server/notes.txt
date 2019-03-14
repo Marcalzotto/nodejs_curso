@@ -2,7 +2,7 @@ tips a tener en cuenta para crear un server con node
 1-buenas formas de organizar mi codigo en piezas reutilizableas
 2-tener formas de manejar archivos
 3-tener formas de manejar base de datos
-4-habilidad de comincarse a traves de internet
+4-habilidad de comunicarse a traves de internet
 5-habilidad de aceptar peticiones y enviar respuestas en formato estandar
 6-formas de lidiar con trabajos que toman mucho tiempo.
 
@@ -16,7 +16,7 @@ y el servidor, dicha informacion se encuentra estructurada en otros protocolos
 http,ftp,smtp.
 
 El protocolo TCP se encarga de tomar la informacion que se va transmitir entre el 
-cliente y el servidor y dividirla en paquetes y enviarla.
+cliente y el servidor, dividirla en paquetes y enviarla.
 
 Puerto
 Es una direccion que indica a que programa se enviaran los paquetes TCP
